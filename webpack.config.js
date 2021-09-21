@@ -9,5 +9,20 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: ''
     },
-    devtool: 'eval-cheap-module-source-map'
+    devtool: 'eval-cheap-module-source-map',
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /nodeModules/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    }
 };
