@@ -48,7 +48,7 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             limit: 8192,
-                            mimetype: 'images/[name].[ext]'
+                            type: 'asset/inline'
                         }
                     }
                 ]
